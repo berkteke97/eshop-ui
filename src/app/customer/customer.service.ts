@@ -9,9 +9,9 @@ import { environment } from 'src/environments/environment';
 export class CustomerService {
 
   constructor(private http: HttpClient) { }
-  
-  createCustomer(customer: Customer){
-    baseUrl : environment.API_BASE_URL;
-    return this.http.post(url, customer);
+  baseUrl = environment.API_BASE_URL;
+
+  createCustomer(customer: Customer){ 
+    return this.http.post(this.baseUrl, customer);
   }
 }
