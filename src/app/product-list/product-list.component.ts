@@ -12,8 +12,6 @@ export class ProductListComponent {
   products: Product[];
   constructor(private productService: ProductService){}
   ngOnInit(){
-    this.productService.getProductList().subscribe((response : any)=>{
-      this.products = response;
-    });
+    
   }
 }

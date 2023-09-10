@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
 import { Product } from '../product';
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,9 +12,6 @@ export class ProductService {
   baseUrl = environment.API_BASE_URL;
   createProduct(product: Product){ 
     return this.http.post(this.baseUrl, product);
-  }
-  getProductList(){
-    return this.http.get(this.baseUrl +'product-controller/getAllProductsUsingGET');
   }
 
 }
