@@ -9,9 +9,11 @@ import { ProductService } from '../product/product.service';
 })
 export class ProductListComponent {
 
-  products: Product[];
+  product: Product[];
   constructor(private productService: ProductService){}
   ngOnInit(){
-    
+    this.productService.getProductList().subscribe((response: any) => {
+      this.product = response;
+    });
   }
 }
