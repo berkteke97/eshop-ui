@@ -14,7 +14,7 @@ export class ProductService {
     return this.http.post(this.baseUrl, product);
   }
   getProductList(){
-    return this.http.get(this.baseUrl+"/product/products");
+    return this.http.get(this.baseUrl+"/product");
   }
 
 }
