@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Product } from '../product';
+import { Product } from '../models/product';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class ProductService {
     return this.http.post(this.baseUrl, product);
   }
   getProductList(){
-    return this.http.get(this.baseUrl+"/product");
+    return this.http.get("http://localhost:8092"+ "/product");
   }
 
 }
