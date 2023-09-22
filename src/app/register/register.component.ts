@@ -12,6 +12,7 @@ export class RegisterComponent implements OnInit {
   customer = new Customer();
   showAlert = false;
   constructor(private customerService: CustomerService) { }
+  public showPassword: boolean = false;
 
   ngOnInit() {
   }
@@ -25,6 +26,9 @@ export class RegisterComponent implements OnInit {
       this.showAlert = true;
       this.customer = new Customer();
     });
+  }
+  public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 
 }

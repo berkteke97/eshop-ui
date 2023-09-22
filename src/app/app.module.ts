@@ -11,6 +11,10 @@ import { ProductService } from './product/product.service';
 import { CommonModule } from '@angular/common';
 import { ProductListComponent } from './product-list/product-list.component';
 import { RegisterComponent } from './register/register.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,11 @@ import { RegisterComponent } from './register/register.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

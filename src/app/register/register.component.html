@@ -10,10 +10,14 @@
                     <label for="username">Username</label>
                     <input [(ngModel)]="customer.username" id="username" name="username" class="form-control" type="text">
                 </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input [(ngModel)]="customer.password" id="password" name="password" class="form-control" type="text">
-                </div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput [type]="showPassword ? 'text' : 'password'" name="password">
+                    <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                        {{showPassword?'visibility_off':'visibility'}}
+                    </mat-icon>
+                </mat-form-field>
+                
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input [(ngModel)]="customer.name" id="name" name="name" class="form-control" type="text">
@@ -32,7 +36,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="aggreement">Aggreement</label>
+                    <label for="aggreement">Agreement</label>
                     <input [(ngModel)]="customer.agreement" name="aggreement" id="aggreement" class="form-control" type="checkbox">
                 </div>
 
