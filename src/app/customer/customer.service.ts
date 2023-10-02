@@ -12,6 +12,6 @@ export class CustomerService {
   baseUrl = environment.API_BASE_URL;
 
   createCustomer(customer: Customer){ 
-    return this.http.post(this.baseUrl, customer);
+    return this.http.post("http://localhost:8092"+"/account/addCustomer", customer);
   }
 }

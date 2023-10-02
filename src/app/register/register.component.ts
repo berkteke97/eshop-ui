@@ -25,10 +25,11 @@ export class RegisterComponent implements OnInit {
       console.log(response);
       this.showAlert = true;
       this.customer = new Customer();
+      this.customer.activeOrder = true;
     });
   }
   public togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
-  }
+  } 
 
 }
