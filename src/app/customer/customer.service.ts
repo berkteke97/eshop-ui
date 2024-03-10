@@ -14,4 +14,13 @@ export class CustomerService {
   createCustomer(customer: Customer){ 
     return this.http.post("http://localhost:8092"+"/account/addCustomer", customer);
   }
+
+  login(username: String, password: String){
+
+    const loginData = {
+      username: username,
+      password: password
+    };
+    return this.http.post("http://localhost:8092"+"/login", loginData);
+  }
 }

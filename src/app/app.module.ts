@@ -16,6 +16,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  // Diğer sayfa yönlendirmeleri...
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +40,8 @@ import { CustomerProfileComponent } from './customer-profile/customer-profile.co
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
