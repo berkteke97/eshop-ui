@@ -1,26 +1,32 @@
 <nav class="nav bg-dark">
-<li class="nav-item">
-    <a class="nav-link active" href="#">Home</a>
-</li>
-
-<li class="nav-item">
-    <a class="nav-link active" href="#">Profile</a>
-</li>
-
-<li class="nav-item">
-    <a class="nav-link active" [routerLink]="['/product-list']">Products</a>
-</li>
-
-<li class="nav-item">
-    <a class="nav-link active" [routerLink]="['/register']">Register</a>
-</li>
-
-<li class="nav-item">
-    <a class="nav-link active" [routerLink]="['/customer-profile']">Profile</a>
-</li>
-
-<li class="nav-item">
-    <a class="nav-link active" [routerLink]="['/login']">Login</a>
-</li>
-</nav>
-<router-outlet></router-outlet>
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Home</a>
+    </li>
+  
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Profile</a>
+    </li>
+  
+    <li class="nav-item">
+      <a class="nav-link active" [routerLink]="['/product-list']">Products</a>
+    </li>
+  
+    <li class="nav-item">
+      <a class="nav-link active" [routerLink]="['/register']">Register</a>
+    </li>
+  
+    <li class="nav-item">
+      <a class="nav-link active" [routerLink]="['/customer-profile']">Profile</a>
+    </li>
+  
+    <li class="nav-item">
+      <a class="nav-link active" [routerLink]="['/auth']">Login</a>
+    </li>
+  </nav>
+  
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  
+  <app-notification *ngIf="showNotification" [message]="notificationMessage"></app-notification>
+  

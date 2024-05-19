@@ -4,8 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './product/product.service';
 import { CommonModule } from '@angular/common';
@@ -17,24 +16,29 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthComponent } from './auth/auth.component';
+import { AuthService } from './auth_service/auth.service';
+import { NotificationComponentComponent } from './notification-component/notification-component.component';
+import { NotificationComponent } from './notification/notification.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  // Diğer sayfa yönlendirmeleri...
+
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     ProductListComponent,
     RegisterComponent,
-    CustomerProfileComponent
+    CustomerProfileComponent,
+    AuthComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
     MatFormFieldModule,
@@ -43,7 +47,9 @@ const routes: Routes = [
     MatIconModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ProductService],
+  providers: [ProductService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
