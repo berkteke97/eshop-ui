@@ -4,6 +4,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { RegisterComponent } from './register/register.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { AuthComponent } from './auth/auth.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 const routes: Routes = [
   {
   path : "product-list",
@@ -20,7 +21,10 @@ const routes: Routes = [
   {
     path : "auth",
     component :  AuthComponent
-  }
+  },
+  
+  { path: 'product-detail/:id', component: ProductDetailComponent }, // id parametresi burada
+
 ];
 
 @NgModule({

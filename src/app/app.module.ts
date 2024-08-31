@@ -18,8 +18,7 @@ import { CustomerProfileComponent } from './customer-profile/customer-profile.co
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth_service/auth.service';
-import { NotificationComponentComponent } from './notification-component/notification-component.component';
-import { NotificationComponent } from './notification/notification.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 const routes: Routes = [
 
@@ -32,7 +31,7 @@ const routes: Routes = [
     RegisterComponent,
     CustomerProfileComponent,
     AuthComponent,
-    NotificationComponent
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
