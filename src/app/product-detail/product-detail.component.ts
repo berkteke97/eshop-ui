@@ -10,6 +10,7 @@ import { Product } from '../models/product';
 })
 export class ProductDetailComponent implements OnInit {
   product: Product | undefined;
+  imageSrc: string | undefined;  // BURADA TANIMLAYIN
 
   constructor(
     private productService: ProductService,
@@ -23,6 +24,9 @@ export class ProductDetailComponent implements OnInit {
         this.productService.getProductById(id).subscribe(
           data => {
             this.product = data;
+            if (this.product.imageUrl) {
+              this.imageSrc = this.convertImageToBase64(this.product.imageUrl);
+            }
           },
           error => {
             console.error('Ürün bilgileri alınamadı:', error);
@@ -32,8 +36,11 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
+  convertImageToBase64(image: any): string {
+    return 'data:image/jpeg;base64,' + image;  // Image type jpg/png vb. olabilir.
+  }
+
   buyProduct(): void {
-    // Satın alma işlemi için gerekli işlevler burada tanımlanabilir
     alert('Bu ürünü satın almak için ilgili adımları izleyin.');
   }
 }

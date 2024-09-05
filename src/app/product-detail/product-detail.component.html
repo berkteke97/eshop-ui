@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-6">
       <!-- Ürün Resmi -->
-      <img [src]="product?.imageUrl" alt="{{product?.brand}}" class="img-fluid">
+      <img [src]="imageSrc" alt="{{product?.brand}}" class="img-fluid">
     </div>
     <div class="col-md-6">
       <!-- Ürün Bilgileri -->
@@ -14,7 +14,6 @@
       <p><strong>Açıklama:</strong></p>
       <p>{{ product?.detail }}</p>
       <!-- İletişim veya Alışveriş Yapma Butonu -->
-      <!--button class="btn btn-primary" (click)="buyProduct()">Satın Al</button-->
     </div>
   </div>
 </div>

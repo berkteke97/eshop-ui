@@ -7,16 +7,24 @@
     <a class="nav-link active" [routerLink]="['/product-list']">Products</a>
   </li>
 
-  <li class="nav-item">
+  <!-- Kullanıcı giriş yapmamışsa göster -->
+  <li class="nav-item" *ngIf="!currentUser">
     <a class="nav-link active" [routerLink]="['/register']">Register</a>
   </li>
 
-  <li class="nav-item">
+  <!-- Kullanıcı giriş yaptıysa göster -->
+  <li class="nav-item" *ngIf="currentUser">
     <a class="nav-link active" [routerLink]="['/customer-profile']">Profile</a>
   </li>
 
-  <li class="nav-item">
-    <a class="nav-link active" [routerLink]="['/auth']">Profile</a>
+  <!-- Giriş yapmamış kullanıcıya giriş bağlantısı göster -->
+  <li class="nav-item" *ngIf="!currentUser">
+    <a class="nav-link active" [routerLink]="['/auth']">Login</a>
+  </li>
+
+  <!-- Giriş yapmış kullanıcıya çıkış bağlantısı göster -->
+  <li class="nav-item" *ngIf="currentUser">
+    <a class="nav-link active" (click)="logout()">Logout</a>
   </li>
 </nav>
 
